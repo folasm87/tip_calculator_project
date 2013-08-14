@@ -1,16 +1,27 @@
-import sys
+#import sys
 #cost is cost of the meal
 #cost = float(raw_input("The cost of the meal is $"))
-cost = sys.argv[1]
+from optparse import OptionParser
+parser = OptionParser()
+parser.add_option("-f", "--cost", dest="cost", help="the cost of the meal", type="float")
+parser.add_option("-s", "--tax", dest="tax", help="the tax in $", type="float")
+parser.add_option("-t", "--tip_rate", dest="tip_rate", help="The tip in terms of percentage", type="float", default= 10.00)
+(options, args) = parser.parse_args()
+if not (options.cost and options.tax): 
+    parser.error("You need to supply arguments for the cost and tax")
+#cost = sys.argv[1]
+cost = options.cost
 cost = float(cost)
 #tax = float(raw_input("The Tax is $"))
-tax = sys.argv[2]
+#tax = sys.argv[2]
+tax = options.tax
 tax = float(tax)
 tax_value = tax
 meal_with_tax = cost + tax
 meal_with_tax = meal_with_tax
 #tip_rate = float((raw_input("The tip is %")))
-tip_rate = float(sys.argv[3])
+#tip_rate = float(sys.argv[3])
+tip_rate = options.tip_rate
 tip_rate /=100
 tip = (tip_rate*(meal_with_tax))
 tip_value = tip
