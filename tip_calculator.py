@@ -1,9 +1,16 @@
+import sys
 #cost is cost of the meal
-cost = float(raw_input("The cost of the meal is $"))
-tax = float(raw_input("The Tax is $"))
+#cost = float(raw_input("The cost of the meal is $"))
+cost = sys.argv[1]
+cost = float(cost)
+#tax = float(raw_input("The Tax is $"))
+tax = sys.argv[2]
+tax = float(tax)
 tax_value = tax
 meal_with_tax = cost + tax
-tip_rate = float((raw_input("The tip is %")))
+meal_with_tax = meal_with_tax
+#tip_rate = float((raw_input("The tip is %")))
+tip_rate = float(sys.argv[3])
 tip_rate /=100
 tip = (tip_rate*(meal_with_tax))
 tip_value = tip
