@@ -11,9 +11,9 @@ tax = options.tax
 tax_value = (tax/100)  * cost
 meal_with_tax = cost + tax_value
 tip_rate = options.tip_rate
-tip_value = ((tip_rate/100) * (meal_with_tax))
+tip_value = (tip_rate/100) * (meal_with_tax)
 total = meal_with_tax + tip_value
 print "The base cost of your meal was ${0}".format("%0.2f" % cost)
 print "You need to pay ${0} in tax for a rate of {1}%".format("%0.2f" % tax_value, "%0.2f" % tax)
-print "Tipping at a rate of {0}%, you should leave ${1} for a tip.".format("%0.2f" % (tip_rate),"%0.2f" %  tip_value)
-print "The grand total of your meal is ${0}.".format("%0.2f" % (total))
+print "Tipping at a rate of {0}%, you should leave ${1} for a tip.".format("%0.2f" % tip_rate,"%0.2f" %  tip_value)
+print "The grand total of your meal is ${0}.".format("%0.2f" % total)
